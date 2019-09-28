@@ -2,16 +2,28 @@ package com.bawei.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.bawei.Base.BaseActivity;
+import com.bawei.Base.BasePsersenter;
+import com.bawei.Presensor.LoginPersenter;
+
+public class MainActivity extends BaseActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ////
-        /////
-        /////阿三大苏打阿斯顿阿三阿达
+    protected BasePsersenter providerPresenter() {
+        return new LoginPersenter();
+    }
+
+    @Override
+    protected int inilayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public Context getContext() {
+        return null;
     }
 }
